@@ -1,22 +1,19 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import Author from './components/Author'
 import Quote from './components/Quote'
+import { fetchRandomQuote } from './hooks/useFetch.js'
+import './App.css'
 
 function App() {
 	const [quote, setQuote] = useState({})
 
-	const fetchQuote = () => {
-		fetch('https://quote-garden.onrender.com/api/v3/quotes/random')
-			.then((res) => res.json())
-			.then((data) => {
-				setQuote(data.data[0])
-			})
-	}
-
 	useEffect(() => {
-		fetchQuote()
+		fetchRandomQuote().then((newQuote) => setQuote(newQuote))
 	}, [])
+
+	const fetchQuote = () => {
+		fetchRandomQuote().then((newQuote) => setQuote(newQuote))
+	}
 
 	return (
 		<>
