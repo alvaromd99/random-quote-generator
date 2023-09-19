@@ -1,0 +1,8 @@
+.quote-cont {
+	box-sizing: border-box;
+	padding-left: 10px;
+	width: 320px;
+	color: black;
+	border-left: 2px solid blue;
+	font-size: 30px;
+}
