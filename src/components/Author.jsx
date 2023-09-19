@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import './Author.css'
+import '../styles/Author.css'
 
 export default function Author({ quote }) {
 	const { quoteAuthor, quoteGenre } = quote
@@ -11,6 +11,7 @@ export default function Author({ quote }) {
 					<p>{quoteGenre}</p>
 				</div>
 				<svg
+					className='icon'
 					width='24'
 					height='24'
 					xmlns='http://www.w3.org/2000/svg'

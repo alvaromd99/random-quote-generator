@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import './Quote.css'
+import '../styles/Quote.css'
 
 export default function Quote({ quote }) {
 	const { quoteText } = quote
