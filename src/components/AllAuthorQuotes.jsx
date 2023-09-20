@@ -26,29 +26,20 @@ export default function AllAuthorQuotes({ author }) {
 			{isLoading ? (
 				<Loader />
 			) : (
-				quotes.length !== 0 && (
-					<div>
-						<h1>{quotes[0].quoteAuthor}</h1>
-						<div className='wrapper'>
-							{quotes.map((quote) => (
-								<Quote key={quote._id} quote={quote} />
-							))}
+				<>
+					{quotes.length !== 0 && (
+						<div>
+							<h1>{quotes[0].quoteAuthor}</h1>
+							<div className='wrapper'>
+								{quotes.map((quote) => (
+									<Quote key={quote._id} quote={quote} />
+								))}
+							</div>
 						</div>
-					</div>
-				)
+					)}
+					<Footer />
+				</>
 			)}
-			<Footer />
-
-			{/* {quotes.length !== 0 && (
-				<div>
-					<h1>{quotes[0].quoteAuthor}</h1>
-					<div className='wrapper'>
-						{quotes.map((quote) => (
-							<Quote key={quote._id} quote={quote} />
-						))}
-					</div>
-				</div>
-			)} */}
 		</>
 	)
 }

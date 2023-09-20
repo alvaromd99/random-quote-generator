@@ -28,9 +28,6 @@ function App() {
 		})
 	}
 
-	// Endpoint to test
-	// https://quote-garden.onrender.com/api/v3/quotes/?author=Aaliyah
-
 	return (
 		<>
 			<button
@@ -52,28 +49,7 @@ function App() {
 				</svg>
 			</button>
 
-			{isLoading && <Loader />}
-
-			{!isLoading && authorActive && (
-				<div className='App all-quotes'>
-					<AllAuthorQuotes author={quote.quoteAuthor} />
-				</div>
-			)}
-
-			{!isLoading && !authorActive && (
-				<div
-					className='App'
-					onClick={() => {
-						setAuthorActive(!authorActive)
-					}}>
-					<Quote quote={quote} />
-					<Author quote={quote} />
-					<div className='foot'>
-						<Footer />
-					</div>
-				</div>
-			)}
-			{/* {isLoading ? (
+			{isLoading ? (
 				<Loader />
 			) : authorActive ? (
 				<div className='App all-quotes'>
@@ -93,7 +69,7 @@ function App() {
 						<Footer />
 					</div>
 				</div>
-			)} */}
+			)}
 		</>
 	)
 }
