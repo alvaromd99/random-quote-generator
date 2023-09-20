@@ -17,9 +17,10 @@ export async function fetchRandomQuote() {
 // https://quote-garden.onrender.com/api/v3/quotes/?author=Aaliyah
 
 export async function fetchAllQuotes({ author }) {
+	console.log('Fetch quotes -> ' + author)
 	try {
 		const response = await fetch(
-			`https://quote-garden.onrender.com/api/v3/quotes/?=author=${author}`
+			`https://quote-garden.onrender.com/api/v3/quotes/?author=${author}`
 		)
 		const data = await response.json()
 

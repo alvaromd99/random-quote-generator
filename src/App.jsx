@@ -7,6 +7,8 @@ import Loader from './components/Loader'
 import Footer from './components/Footer'
 import './App.css'
 
+// TODO Make it responsive on some small screens
+
 function App() {
 	const [quote, setQuote] = useState({})
 	const [isLoading, setIsLoading] = useState(false)
@@ -27,6 +29,14 @@ function App() {
 			setIsLoading(false)
 		})
 	}
+
+	const toggleAuthorActive = () => {
+		setIsLoading(true)
+		setAuthorActive(!authorActive)
+		setIsLoading(false)
+	}
+
+	console.log('Quote from App -> ' + quote.quoteAuthor)
 
 	return (
 		<>
@@ -52,22 +62,14 @@ function App() {
 			{isLoading ? (
 				<Loader />
 			) : authorActive ? (
-				<div className='App all-quotes'>
+				<div className='App'>
 					<AllAuthorQuotes author={quote.quoteAuthor} />
 				</div>
 			) : (
-				<div
-					className='App'
-					onClick={() => {
-						setIsLoading(true)
-						setAuthorActive(!authorActive)
-						setIsLoading(false)
-					}}>
+				<div className='App single' onClick={toggleAuthorActive}>
 					<Quote quote={quote} />
 					<Author quote={quote} />
-					<div className='foot'>
-						<Footer />
-					</div>
+					<Footer />
 				</div>
 			)}
 		</>

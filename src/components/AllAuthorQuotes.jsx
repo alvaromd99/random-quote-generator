@@ -7,13 +7,14 @@ import Loader from './Loader'
 import '../styles/AllAuthorQuotes.css'
 
 export default function AllAuthorQuotes({ author }) {
-	console.log('Render')
+	console.log('All quotes comp -> ' + author)
 
 	const [quotes, setQuotes] = useState([])
 	const [isLoading, setIsLoading] = useState(false)
 
 	useEffect(() => {
 		setIsLoading(true)
+		console.log('Before fetching -> ' + author)
 		fetchAllQuotes({ author }).then((newQuotes) => {
 			setIsLoading(false)
 			setQuotes(newQuotes)

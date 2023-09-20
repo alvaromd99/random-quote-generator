@@ -33,13 +33,9 @@
 	outline: 1px solid black;
 }
 
-.foot {
-	position: absolute;
-	bottom: 0px;
-}
-
-@media (min-height: 990px) {
-	.foot {
-		position: relative;
+@media (max-height: 990px) {
+	.App.single footer {
+		position: absolute;
+		bottom: 0;
 	}
 }
